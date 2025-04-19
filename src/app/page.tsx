@@ -15,12 +15,14 @@ export default function Home() {
     return pattern.test(url.trim());
   };
 
+  // Check for dark mode preference
   useEffect(() => {
     const prefersDarkMode = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
     setIsDarkMode(prefersDarkMode);
   }, []);
+
 
   const generatedQrCode = async () => {
     setErrorMessage("");
